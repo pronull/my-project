@@ -2,19 +2,26 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
 
-import FilterDemo from '@/components/filter/filterDemo'
-import computedDemo from '@/components/computed/computedDemo'
-import watchDemo from '@/components/computed/watchDemo'
-import propDemo from '../components/prop/supper'
-import slotDemo from '../components/slot/supper'
+
 import webIndex from '../web/index'
 import webSingle from '../web/single'
+//vuebase
+import vuebase from '../web/vueStudy/vuebase'
+
+
+
 
 Vue.use(Router)
 Vue.use(VueResource)
 
 export default new Router({
   routes: [
+    //vuebase部分
+    {
+      path: '/vuebase',
+      name: 'vuebase',
+      component: vuebase
+    },
     {
       path: '/filterDemo',
       name: 'filterDemo',

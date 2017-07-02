@@ -1,18 +1,5 @@
-<template>
+<template xmlns:style="http://www.w3.org/1999/xhtml">
   <div id="app">
-    <!-- Bootstrap styles -->
-    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
-
-
-    <!-- Font-Awesome -->
-    <!--<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">-->
-
-    <!-- Google Webfonts -->
-    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Serif:400,400italic' rel='stylesheet'-->
-          <!--type='text/css'>-->
-
-    <!-- Styles -->
-    <!--<link rel="stylesheet" href="css/style.css" id="theme-styles">-->
     <router-view></router-view>
   </div>
 </template>
