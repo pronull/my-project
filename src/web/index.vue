@@ -2,10 +2,6 @@
   <div>
     <div class="widewrapper masthead">
       <div class="container">
-        <router-link to="/" id="logo">
-          <img src="../../static/img/logo.png" alt="clean Blog">
-        </router-link>
-
         <div id="mobile-nav-toggle" class="pull-right">
           <router-link to="/">
             <i class="fa fa-bars"></i>
@@ -57,16 +53,16 @@
               <div class="col-md-6 col-sm-6">
                 <article class=" blog-teaser">
                   <header>
-                    <img src="../../static/img/1.jpg" alt="">
-                    <h3><router-link to="/webSingle">How to Create Template</router-link></h3>
-                    <span class="meta">19 August 2015, John Doe</span>
+                    <img src="../../static/img/vuejs.png" alt="vue">
+                    <h3><router-link to="/vuebase">vue.js学习</router-link></h3>
+                    <span class="meta">2017年7月2日</span>
                     <hr>
                   </header>
                   <div class="body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
+                    Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，它不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和 Vue 生态系统支持的库结合使用时，Vue 也完全能够为复杂的单页应用程序提供驱动。
                   </div>
                   <div class="clearfix">
-                    <router-link to="/webSingle" class="btn btn-clean-one">Read more</router-link>
+                    <router-link to="/vuebase" class="btn btn-clean-one">Read more</router-link>
                   </div>
                 </article>
               </div>

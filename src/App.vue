@@ -1,4 +1,4 @@
-<template>
+<template xmlns:style="http://www.w3.org/1999/xhtml">
   <div id="app">
     <router-view></router-view>
   </div>
