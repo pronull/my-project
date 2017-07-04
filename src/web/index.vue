@@ -54,10 +54,10 @@
                 <article class=" blog-teaser">
                   <header>
                     <img src="../../static/img/vuejs.png" alt="vue">
-                    <h3><router-link to="/vuebase">vue.js学习</router-link></h3>
+                    <h3><router-link to="/vuebase">vue.js 2.x学习</router-link></h3>
                     <span class="meta">2017年7月2日</span>
                     <hr>
-                  </header>
+                  </header>java8lambda.png
                   <div class="body">
                     Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，它不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和 Vue 生态系统支持的库结合使用时，Vue 也完全能够为复杂的单页应用程序提供驱动。
                   </div>
@@ -66,26 +66,27 @@
                   </div>
                 </article>
               </div>
+
+
               <div class="col-md-6 col-sm-6">
                 <article class="blog-teaser">
                   <header>
-                    <img src="../../static/img/2.jpg" alt="">
-                    <h3><router-link to="/webSingle">Clean Personal Blog Template</router-link></h3>
-                    <span class="meta">19 August 2015, John Doe</span>
+                    <img src="../../static/img/lambda.png">
+                    <h3><router-link to="/lambda">java8 lambda表达式学习</router-link></h3>
+                    <span class="meta">2017-07-03</span>
                     <hr>
                   </header>
                   <div class="body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
+                    函数式编程兴起,各种语言都有自己的实现,如果还不学习函数式编程就要被淘汰了
                   </div>
                   <div class="clearfix">
-                    <router-link to="/webSingle" class="btn btn-clean-one">Read more</router-link>
+                    <router-link to="/lambda" class="btn btn-clean-one">Read more</router-link>
                   </div>
                 </article>
               </div>
             </div>
 
             <div class="copyrights">Collect from <router-link to="http://www.cssmoban.com/">手机网站模板</router-link></div>
-
             <div class="row">
               <div class="col-md-6 col-sm-6">
                 <article class="blog-teaser">
