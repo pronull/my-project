@@ -72,12 +72,87 @@
                       this.t = t;
                     }
 
-                    public boolean check(IntPred&ltT&gl predicate){
+                    public boolean check(IntPred&ltT&gt predicate){
                       return predicate.test(t);
                     }
                   }
                 </p>
+                <p>
+                  public class TestIntPred {
+                    public static void main(String[] args) {
+                      IntTest&ltInteger&gt test = new IntTest(7);
+                      boolean result = test.check(x -> x > 5);
+                      System.out.println(result);
+                    }
+                  }
+                </p>
+              <p>
+                结果:true
+              </p>
               </div>
+
+              <hr>
+              stream中常用的一些lambda方法:
+              <ul>
+                <li>filter(Predicate&ltT&gt)</li>
+                <li>forEach(Consumer&ltT&gt)</li>
+                <li>map(Function&ltT,R&gt)</li>
+                <li>collect(Collectors.toList())</li>
+                <li>collect(Collectors.toSet())</li>
+              </ul>
+              <br/>
+              stream中一些不常用的lambda方法:
+              <ul>
+                <li>reduce(Predicate&ltT&gt):
+                  <br/>这里介绍一下
+                  <p>public class ReduceTest {
+                  public static void main(String[] args) {
+                  List&ltString&gt list = new ArrayList<>();
+                    for (int i = 1; i <= 10; i++) {
+                    list.add(i + "");
+                    }
+                    String first = "";
+                    String result = list.stream().reduce(first, (temp, str) -> temp + str + "\t");
+                    System.out.println(result);
+                    }
+                    }
+                  </p>
+                  <p>
+                    结果:1	2	3	4	5	6	7	8	9	10
+                  </p>
+                </li>
+                <li>flatMap(Function&lt? super T, ? extends Stream&lt? extends R>> mapper):
+                  <br/>
+                  public class FlatMapTest {
+                  public static void main(String[] args) {
+                  List&ltString&gt list = new ArrayList<>();
+                    for (int i = 1; i <= 10; i++) {
+                    list.add(i + "");
+                    }
+                    List&ltString&gt list2 = new ArrayList<>();
+                      for (int i = 1; i <= 10; i++) {
+                      list.add(i+100 + "");
+                      }
+                      List&ltString&gt list3 = new ArrayList<>();
+                        for (int i = 1; i <= 10; i++) {
+                        list.add(i+200 + "");
+                        }
+                        List&ltList&ltString>> listAll = new ArrayList<>();
+                          listAll.add(list);
+                          listAll.add(list2);
+                          listAll.add(list3);
+                          System.out.println("原集合:\t"+listAll);
+                          List&ltString> result = listAll.stream().flatMap(subList -> subList.stream()).collect(Collectors.toList());
+                            System.out.println("flatMap后:\t"+result);
+                            }
+                            }
+                  <p>
+                    结果:<br/>
+                    原集合:	[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210], [], []]<br/>
+                    flatMap后:	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210]
+                  </p>
+                </li>
+              </ul>
             </article>
 
             <aside class="social-icons clearfix">
