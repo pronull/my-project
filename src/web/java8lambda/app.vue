@@ -1,5 +1,3 @@
-
-
 <template xmlns:style="http://www.w3.org/1999/xhtml">
   <div>
     <div class="widewrapper main">
@@ -17,7 +15,8 @@
               <div class="body">
                 <h1>lambda</h1>
                 <div class="meta">
-                  <i class="fa fa-user"></i> pronull <i class="fa fa-calendar"></i>2017-07-03<i class="fa fa-comments"></i><span class="data"><a href="#">3 Comments</a></span>
+                  <i class="fa fa-user"></i> pronull <i class="fa fa-calendar"></i>2017-07-03<i
+                  class="fa fa-comments"></i><span class="data"><a href="#">3 Comments</a></span>
                 </div>
                 <table>
                   <tr>
@@ -59,36 +58,34 @@
                 <hr>
                 以上几个接口为java8内置接口,这里我试着用自己的接口实现了一下,可以发现,其实完全可以用自己的接口完成lambda表达式,
                 代码如下:
-                <p>
-                  public interface IntPred&ltT&gt {
-                    boolean test(T value);
-                  }
-                </p>
-                <p>
+                <pre>
+                 {{codes.code001}}
+                </pre>
+                <pre>
                   public class IntTest&ltT&gt{
-                    private T t;
+                  private T t;
 
-                    public IntTest(T t) {
-                      this.t = t;
-                    }
-
-                    public boolean check(IntPred&ltT&gt predicate){
-                      return predicate.test(t);
-                    }
+                  public IntTest(T t) {
+                  this.t = t;
                   }
-                </p>
-                <p>
+
+                  public boolean check(IntPred&ltT&gt predicate){
+                  return predicate.test(t);
+                  }
+                  }
+                </pre>
+                <pre>
                   public class TestIntPred {
-                    public static void main(String[] args) {
-                      IntTest&ltInteger&gt test = new IntTest(7);
-                      boolean result = test.check(x -> x > 5);
-                      System.out.println(result);
-                    }
+                  public static void main(String[] args) {
+                  IntTest&ltInteger&gt test = new IntTest(7);
+                  boolean result = test.check(x -> x > 5);
+                  System.out.println(result);
                   }
+                  }
+                </pre>
+                <p>
+                  结果:true
                 </p>
-              <p>
-                结果:true
-              </p>
               </div>
 
               <hr>
@@ -105,9 +102,9 @@
               <ul>
                 <li>reduce(Predicate&ltT&gt):
                   <br/>这里介绍一下
-                  <p>public class ReduceTest {
-                  public static void main(String[] args) {
-                  List&ltString&gt list = new ArrayList<>();
+                  <pre>public class ReduceTest {
+                    public static void main(String[] args) {
+                    List&ltString&gt list = new ArrayList<>();
                     for (int i = 1; i <= 10; i++) {
                     list.add(i + "");
                     }
@@ -116,36 +113,37 @@
                     System.out.println(result);
                     }
                     }
-                  </p>
+                  </pre>
                   <p>
                     结果:1	2	3	4	5	6	7	8	9	10
                   </p>
                 </li>
                 <li>flatMap(Function&lt? super T, ? extends Stream&lt? extends R>> mapper):
                   <br/>
+                  <pre>
                   public class FlatMapTest {
                   public static void main(String[] args) {
                   List&ltString&gt list = new ArrayList<>();
-                    for (int i = 1; i <= 10; i++) {
-                    list.add(i + "");
-                    }
-                    List&ltString&gt list2 = new ArrayList<>();
-                      for (int i = 1; i <= 10; i++) {
-                      list.add(i+100 + "");
-                      }
-                      List&ltString&gt list3 = new ArrayList<>();
-                        for (int i = 1; i <= 10; i++) {
-                        list.add(i+200 + "");
-                        }
-                        List&ltList&ltString>> listAll = new ArrayList<>();
-                          listAll.add(list);
-                          listAll.add(list2);
-                          listAll.add(list3);
-                          System.out.println("原集合:\t"+listAll);
-                          List&ltString> result = listAll.stream().flatMap(subList -> subList.stream()).collect(Collectors.toList());
-                            System.out.println("flatMap后:\t"+result);
-                            }
-                            }
+                  for (int i = 1; i <= 10; i++) {
+                  list.add(i + "");
+                  }
+                  List&ltString&gt list2 = new ArrayList<>();
+                  for (int i = 1; i <= 10; i++) {
+                  list.add(i+100 + "");
+                  }
+                  List&ltString&gt list3 = new ArrayList<>();
+                  for (int i = 1; i <= 10; i++) {
+                  list.add(i+200 + "");
+                  }
+                  List&ltList&ltString>> listAll = new ArrayList<>();
+                  listAll.add(list);
+                  listAll.add(list2);
+                  listAll.add(list3);
+                  System.out.println("原集合:\t"+listAll);
+                  List&ltString> result = listAll.stream().flatMap(subList -> subList.stream()).collect(Collectors.toList());
+                  System.out.println("flatMap后:\t"+result);
+                  }
+                  }</pre>
                   <p>
                     结果:<br/>
                     原集合:	[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210], [], []]<br/>
@@ -157,7 +155,8 @@
 
             <aside class="social-icons clearfix">
               <h3>Share on </h3>
-              <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a
+              href="#"><i class="fa fa-google"></i></a>
             </aside>
 
             <aside class="comments" id="comments">
@@ -254,16 +253,19 @@
               <form action="#" method="get" accept-charset="utf-8">
                 <div class="row">
                   <div class="col-md-6">
-                    <input type="text" name="name" id="comment-name" placeholder="Your Name" class="form-control input-lg">
+                    <input type="text" name="name" id="comment-name" placeholder="Your Name"
+                           class="form-control input-lg">
                   </div>
                   <div class="col-md-6">
-                    <input type="email" name="email" id="comment-email" placeholder="Email" class="form-control input-lg">
+                    <input type="email" name="email" id="comment-email" placeholder="Email"
+                           class="form-control input-lg">
                   </div>
                 </div>
 
                 <input type="url" name="name" id="comment-url" placeholder="Website" class="form-control input-lg">
 
-                <textarea rows="10" name="message" id="comment-body" placeholder="Your Message" class="form-control input-lg"></textarea>
+                <textarea rows="10" name="message" id="comment-body" placeholder="Your Message"
+                          class="form-control input-lg"></textarea>
 
                 <div class="buttons clearfix">
                   <button type="submit" class="btn btn-xlarge btn-clean-one">Submit</button>
@@ -331,29 +333,35 @@
 
 <script>
 
-export default {
-  name: 'lambda',
-  data(){
+  export default {
+    name: 'lambda',
+    data(){
       return {
-          tips0:`lambda`,
+        tips0: `lambda`,
+        codes:{},
       }
-  },
-  components:{
-
+    },
+    created:function(){
+      this.codes['code001'] = `public interface IntPred<T> {
+                                     boolean test(T value);
+                                  }`
+    },
+    components: {}
   }
-}
 </script>
 
 <style>
-  th{
-    border-bottom:1px solid #E6E8EB;
+  th {
+    border-bottom: 1px solid #E6E8EB;
     border-top: 1px solid #E6E8EB;
   }
-  td{
-    border:1px solid #E6E8EB;
+
+  td {
+    border: 1px solid #E6E8EB;
   }
-  table{
-    width:700px;
+
+  table {
+    width: 700px;
   }
 
 </style>
