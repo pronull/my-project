@@ -60,15 +60,9 @@
                 <a id="code001"></a>
                 以上几个接口为java8内置接口,这里我试着用自己的接口实现了一下,可以发现,其实完全可以用自己的接口完成lambda表达式,
                 代码如下:
-                <pre>
-                 {{codes.code001}}
-                </pre>
-                <pre>
-                  {{codes.code002}}
-                </pre>
-                <pre>
-                  {{codes.code003}}
-                </pre>
+                <pre>{{codes.code001}}</pre>
+                <pre>{{codes.code002}}</pre>
+                <pre>{{codes.code003}}</pre>
                 <p>
                   结果:true
                 </p>
@@ -89,9 +83,7 @@
                 <a id="code004"></a>
                 <li>reduce(Predicate&ltT&gt):
                   <br/>这里介绍一下
-                  <pre>
-                    {{codes.code004}}
-                  </pre>
+                  <pre>{{codes.code004}}</pre>
                   <p>
                     结果:1	2	3	4	5	6	7	8	9	10<br>
                     12	3	4	5	6	7	8	9	10	<br>
@@ -101,9 +93,7 @@
                 <a id="code005"></a>
                 <li>flatMap(Function&lt? super T, ? extends Stream&lt? extends R>> mapper):
                   <br/>
-                  <pre>
-                    {{codes.code005}}
-                  </pre>
+                  <pre>{{codes.code005}}</pre>
                   <p>
                     结果:<br/>
                     原集合:	[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210], [], []]<br/>
@@ -116,17 +106,11 @@
               <a id="code006"></a>
               接口的默认方法和静态方法:<br>
               接口:
-              <pre>
-                {{codes.code006}}
-              </pre>
+              <pre>{{codes.code006}}</pre>
               实现类:
-              <pre>
-                {{codes.code007}}
-              </pre>
+              <pre>{{codes.code007}}</pre>
               测试:
-              <pre>
-                {{codes.code008}}
-              </pre>
+              <pre>{{codes.code008}}</pre>
               结果:<br/>
               class com.github.lambada.DefaultAndStaticFunctionImple<br/>
               xxx<br/>
@@ -135,9 +119,7 @@
               <hr/>
               <a id="code009"></a>
               收集器:
-              <pre>
-                {{codes.code009}}
-              </pre>
+              <pre>{{codes.code009}}</pre>
               自定义收集器:
 
               <hr/>
@@ -151,6 +133,7 @@
                 <li>性能一般:HashSet, TreeSet等,不容易被分解</li>
                 <li>性能差: LinkedList等链式结构的,对半分解太难了</li>
               </ul>
+              3.在事物中使用并发流,会导致事物不会回滚
             </article>
 
             <!--分享-->
@@ -366,13 +349,11 @@
     },
     created: function () {
       this.codes['code001'] =
-`
-public interface IntPred<T> {
+`public interface IntPred<T> {
     boolean test(T value);
-}`
+}`.trim()
       this.codes['code002'] =
-`
-public class IntTest<T>{
+`public class IntTest<T>{
     private T t;
 
     public IntTest(T t) {
@@ -384,8 +365,7 @@ public class IntTest<T>{
     }
 }`
       this.codes['code003'] =
-`
-public class TestIntPred {
+`public class TestIntPred {
     public static void main(String[] args) {
        IntTest<Integer> test = new IntTest(7);
        boolean result = test.check(x -> x > 5);
@@ -393,8 +373,7 @@ public class TestIntPred {
      }
 }`
       this.codes['code004'] =
-`
-public class ReduceTest {
+`public class ReduceTest {
     public static void main(String[] args) {
 
         List<String> list = new ArrayList<>();
@@ -419,8 +398,7 @@ public class ReduceTest {
     }
 }`
       this.codes['code005'] =
-`
-public class FlatMapTest {
+`public class FlatMapTest {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         for (int i = 1; i <= 10; i++) {
@@ -444,8 +422,7 @@ public class FlatMapTest {
     }
 }`
       this.codes['code006'] =
-`
-public interface DefaultAndStaticFunctionInterface {
+`public interface DefaultAndStaticFunctionInterface {
     //默认方法
     default String getFunctionName() {
         System.out.println(this.getClass());
@@ -457,13 +434,11 @@ public interface DefaultAndStaticFunctionInterface {
     }
 }`
       this.codes['code007'] =
-`
-public class DefaultAndStaticFunctionImple implements DefaultAndStaticFunctionInterface {
+`public class DefaultAndStaticFunctionImple implements DefaultAndStaticFunctionInterface {
 
 }`
       this.codes['code008'] =
-`
-public class DefaultFunctionInterfaceTest {
+`public class DefaultFunctionInterfaceTest {
     public static void main(String[] args) {
 
         //一般的接口定义的方法需要被实现,而默认方法可以不实现
@@ -476,8 +451,7 @@ public class DefaultFunctionInterfaceTest {
     }
 }`
       this.codes['code009']=
-`
-public class CollectorTest {
+`public class CollectorTest {
     public static void main(String[] args) {
 
         List<String> list = new ArrayList();
