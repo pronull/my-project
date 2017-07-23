@@ -8,6 +8,8 @@ import webSingle from '../web/single'
 
 import vuebase from '../web/vueStudy/app'
 import lambda from '../web/java8lambda/app'
+import  login from '../web/login/login'
+import  regist from '../web/login/regist'
 
 
 
@@ -33,6 +35,18 @@ export default new Router({
       path: '/',
       name: 'index',
       component: webIndex
+    },
+    //登录
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    //注册
+    {
+      path: '/regist',
+      name: 'regist',
+      component: regist
     },
     {
       path: '/webSingle',

@@ -21,6 +21,12 @@
               <li>
                 <router-link to="contact.html">Contact</router-link>
               </li>
+              <li>
+                <router-link to="/login">sign in</router-link>
+              </li>
+              <li>
+                <router-link to="/regist">sign up</router-link>
+              </li>
             </ul>
           </div>
         </nav>

@@ -57,7 +57,4 @@ export default {
 </script>
 
 <style>
-  li{
-    width: 300px;
-  }
 </style>
