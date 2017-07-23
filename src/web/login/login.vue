@@ -18,14 +18,20 @@
         loginInfo: {
           account: '',
           password: "",
+          'X-CSRF-TOKEN':'',
         }
       }
     },
     created: function () {
-
+//      this.loginInfo
+//      this.$http.get('http://localhost:8080/login').then(response => {
+//          debugger
+////          this.loginInfo['X-CSRF-TOKEN'] =  response.headers.get('X-CSRF-TOKEN');
+//      });
     },
     methods: {
       signUp(){
+
         this.$http.post('http://localhost:8080/api/login', this.loginInfo).then(response => {
           if (response.data.success) {
             alert(response.data.content);

@@ -16,6 +16,7 @@ import  regist from '../web/login/regist'
 Vue.use(Router)
 Vue.use(VueResource)
 
+
 export default new Router({
   routes: [
     //vuebase部分
