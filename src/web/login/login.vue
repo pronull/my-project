@@ -1,10 +1,14 @@
 <template xmlns:style="http://www.w3.org/1999/xhtml">
   <div>
-    <label>账号</label>:
-    <input type="text" v-model="loginInfo.account" autofocus="autofocus"/> <br/>
-    <label for="password">密码</label>:
-    <input type="password" v-model="loginInfo.password" id="password" name="password"/> <br/>
-    <input type="submit" @click="signUp" value="Log in"/>
+    <!--<form action="http://localhost:8080/api/login" method="post">-->
+      <label for="username">账号</label>:
+      <input type="text" id="username" name="username" v-model="loginInfo.username" autofocus="autofocus"/> <br/>
+      <label for="password">密码</label>:
+      <input type="password" v-model="loginInfo.password" id="password" name="password"/> <br/>
+      <input type="submit"  @click="signIn" value="Log in"/>
+    <!--</form>-->
+
+
   </div>
 </template>
 
@@ -16,9 +20,8 @@
     data(){
       return {
         loginInfo: {
-          account: '',
+          username: '',
           password: "",
-          'X-CSRF-TOKEN':'',
         }
       }
     },
@@ -30,11 +33,11 @@
 //      });
     },
     methods: {
-      signUp(){
-
-        this.$http.post('http://localhost:8080/api/login', this.loginInfo).then(response => {
+      signIn(){
+        var options = { emulateJSON :true };
+        this.$http.post('http://localhost:8080/api/login', this.loginInfo,options).then(response => {
           if (response.data.success) {
-            alert(response.data.content);
+//            window.location.href = '#/myIndex'
           } else {
             alert("账号或密码错误")
           }

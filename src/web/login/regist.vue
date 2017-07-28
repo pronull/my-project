@@ -8,7 +8,7 @@
     <input type="password" v-model="register.password"  id="password" name="password"/> <br/>
     <label>邮箱</label>:
     <input type="text" v-model="register.email" /> <br/>
-    <input type="submit" @click="signUp" value="注册"/>
+    <input type="submit" @click="signIn" value="注册"/>
   </div>
 </template>
 
@@ -31,7 +31,7 @@
 
     },
     methods: {
-      signUp(){
+      signIn(){
         this.$http.post('http://localhost:8080/api/sign/up',this.register).then(response=>{
             if(response.data.success){
                 alert(response.data.content);

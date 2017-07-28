@@ -10,7 +10,7 @@ import vuebase from '../web/vueStudy/app'
 import lambda from '../web/java8lambda/app'
 import  login from '../web/login/login'
 import  regist from '../web/login/regist'
-
+import userIndex from '../web/login/userIndex'
 
 
 Vue.use(Router)
@@ -48,6 +48,11 @@ export default new Router({
       path: '/regist',
       name: 'regist',
       component: regist
+    },
+    {
+      path:'/myIndex',
+      name:'userIndex',
+      component:userIndex
     },
     {
       path: '/webSingle',
