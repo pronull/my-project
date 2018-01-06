@@ -11,6 +11,7 @@ import lambda from '../web/java8lambda/app'
 import  login from '../web/login/login'
 import  regist from '../web/login/regist'
 import userIndex from '../web/login/userIndex'
+import scrollFetchData from '../web/srcollfetchdata/app'
 
 
 Vue.use(Router)
@@ -58,6 +59,11 @@ export default new Router({
       path: '/webSingle',
       name: 'webSingle',
       component: webSingle
+    },
+    {
+      path:'/scrollFetchData',
+      name:'scrollFetchData',
+      component:scrollFetchData
     }
   ]
 })
